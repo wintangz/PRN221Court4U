@@ -1,0 +1,10 @@
+﻿@page
+@model Court4U_PRN.Pages.User.IndexModel
+@{
+}
+<h1>hello</h1>
+<h1>@Model.hello</h1>
+@foreach(var club in Model.clubs)
+{
+    <h2>@club.Name</h2>
+}

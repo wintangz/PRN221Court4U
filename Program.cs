@@ -1,8 +1,12 @@
+using Court4U_PRN.Data;
+using Microsoft.Extensions.Configuration;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-
+builder.Services.AddSqlServer<Court4UDbContext>(
+    builder.Configuration.GetConnectionString("Local"));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Court4U_PRN</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body class="bg-gray-100">
+    <header>
+        <nav class="bg-white border-b shadow mb-3">
+            <div class="container mx-auto px-4 flex justify-between items-center">
+                <h1 class="text-xl font-semibold text-gray-800" asp-area="">Court4U_PRN</h1>
+                <div class="hidden lg:flex lg:items-center w-full lg:w-auto" id="menu">
+                    <ul class="flex flex-col lg:flex-row lg:ml-auto">
+                        <li class="nav-item">
+                            <a class="block px-4 py-2 text-gray-800 hover:bg-gray-200 rounded" asp-area="" asp-page="/Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="block px-4 py-2 text-gray-800 hover:bg-gray-200 rounded" asp-area="" asp-page="/Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container mx-auto px-4">
+        <main role="main" class="py-6">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-t text-gray-600 py-4">
+        <div class="container mx-auto px-4">
+            &copy; 2024 - Court4U_PRN - <a class="text-blue-600 hover:underline" asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('menu').classList.toggle('hidden');
+        });
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
