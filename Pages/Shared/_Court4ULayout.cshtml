@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Court4U_PRN</title>
+    <link rel="stylesheet" href="~/css/output.css" asp-append-version="true" />
+</head>
+<body class="bg-gray-100">
+    <header>
+        <nav class="fixed z-10 w-full top-0 flex items-center justify-between space-x-16 border-b px-8 h-20 bg-gradient-to-l from-[#6bc945] to-[#22ad5c] border-none">
+            <div class="flex px-36 justify-between w-full">
+                <a href="/" class="flex items-center space-x-6 hover:text-primary">
+                    <img class="w-8 h-8" src="~/favicon.ico" alt="Logo" />
+                    <div class="text-2xl text-secondary font-sans font-bold hover:text-primary">Court4U</div>
+                </a>
+                <div class="flex justify-between items-center w-[82%]">
+                    <ul class="flex space-x-16 text-lg font-medium">
+                        <li>
+                            <a href="/" class="text-secondary hover:text-primary transition-colors @((ViewContext.RouteData.Values["page"]?.ToString() == "/" ? "text-primary font-bold" : ""))">Home</a>
+                        </li>
+                        <li>
+                            <a href="/clubs" class="text-secondary hover:text-primary transition-colors @((ViewContext.RouteData.Values["page"]?.ToString() == "/clubs" ? "text-primary font-bold" : ""))">Clubs</a>
+                        </li>
+                        <li>
+                            <a href="/about" class="text-secondary hover:text-primary transition-colors @((ViewContext.RouteData.Values["page"]?.ToString() == "/about" ? "text-primary font-bold" : ""))">About</a>
+                        </li>
+                    </ul>
+                    <ul class="flex space-x-16 text-lg font-medium">
+                        <li>
+                            <a href="/login" class="text-secondary hover:text-primary transition-colors @((ViewContext.RouteData.Values["page"]?.ToString() == "/login" ? "text-primary font-bold" : ""))">Login</a>
+                        </li>
+                        <li>
+                            <a href="/register" class="text-secondary hover:text-primary transition-colors @((ViewContext.RouteData.Values["page"]?.ToString() == "/register" ? "text-primary font-bold" : ""))">Register</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mx-auto px-4 mt-20">
+        <main role="main" class="py-6">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-t text-gray-600 py-4">
+        <div class="container mx-auto px-4">
+            &copy; 2024 - Court4U_PRN - <a class="text-blue-600 hover:underline" asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('menu').classList.toggle('hidden');
+        });
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

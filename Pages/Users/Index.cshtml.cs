@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
-namespace Court4U_PRN.Pages.User
+namespace Court4U_PRN.Pages.Users
 {
     public class IndexModel : PageModel
     {
