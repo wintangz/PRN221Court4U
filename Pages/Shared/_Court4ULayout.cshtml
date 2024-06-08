@@ -12,26 +12,26 @@
             <div class="flex px-36 justify-between w-full">
                 <a href="/" class="flex items-center space-x-6 hover:text-primary">
                     <img class="w-8 h-8" src="~/favicon.ico" alt="Logo" />
-                    <div class="text-2xl text-secondary font-sans font-bold hover:text-primary">Court4U</div>
+                    <div class="text-2xl text-white font-sans font-bold hover:text-primary">Court4U</div>
                 </a>
                 <div class="flex justify-between items-center w-[82%]">
                     <ul class="flex space-x-16 text-lg font-medium">
                         <li>
-                            <a href="/" class="text-secondary hover:text-primary transition-colors @((ViewContext.RouteData.Values["page"]?.ToString() == "/" ? "text-primary font-bold" : ""))">Home</a>
+                            <a href="/" class="text-white hover:text-primary transition-colors @((ViewContext.RouteData.Values["page"]?.ToString() == "/" ? "text-white font-bold" : ""))">Home</a>
                         </li>
                         <li>
-                            <a href="/clubs" class="text-secondary hover:text-primary transition-colors @((ViewContext.RouteData.Values["page"]?.ToString() == "/clubs" ? "text-primary font-bold" : ""))">Clubs</a>
+                            <a href="/clubs" class="text-white hover:text-primary transition-colors @((ViewContext.RouteData.Values["page"]?.ToString() == "/clubs" ? "text-primary font-bold" : ""))">Clubs</a>
                         </li>
                         <li>
-                            <a href="/about" class="text-secondary hover:text-primary transition-colors @((ViewContext.RouteData.Values["page"]?.ToString() == "/about" ? "text-primary font-bold" : ""))">About</a>
+                            <a href="/about" class="text-white hover:text-primary transition-colors @((ViewContext.RouteData.Values["page"]?.ToString() == "/about" ? "text-primary font-bold" : ""))">About</a>
                         </li>
                     </ul>
                     <ul class="flex space-x-16 text-lg font-medium">
                         <li>
-                            <a href="/login" class="text-secondary hover:text-primary transition-colors @((ViewContext.RouteData.Values["page"]?.ToString() == "/login" ? "text-primary font-bold" : ""))">Login</a>
+                            <a href="/login" class="text-white hover:text-primary transition-colors @((ViewContext.RouteData.Values["page"]?.ToString() == "/login" ? "text-primary font-bold" : ""))">Login</a>
                         </li>
                         <li>
-                            <a href="/register" class="text-secondary hover:text-primary transition-colors @((ViewContext.RouteData.Values["page"]?.ToString() == "/register" ? "text-primary font-bold" : ""))">Register</a>
+                            <a href="/register" class="text-white hover:text-primary transition-colors @((ViewContext.RouteData.Values["page"]?.ToString() == "/register" ? "text-primary font-bold" : ""))">Register</a>
                         </li>
                     </ul>
                 </div>
@@ -39,16 +39,41 @@
         </nav>
     </header>
 
-    <div class="container mx-auto px-4 mt-20">
-        <main role="main" class="py-6">
+    <div class="">
+        <main role="main">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-t text-gray-600 py-4">
-        <div class="container mx-auto px-4">
-            &copy; 2024 - Court4U_PRN - <a class="text-blue-600 hover:underline" asp-area="" asp-page="/Privacy">Privacy</a>
+    <footer class="relative bg-[#222222] text-white w-full py-10 space-y-10">
+        <div class="flex justify-around items-start">
+            <div class="flex space-y-2 flex-col justify-center items-center">
+                <div class="font-bold text-xl">Company</div>
+                <ul>
+                    <li>About us</li>
+                    <li>Privacy policy</li>
+                    <li>Terms of Use</li>
+                </ul>
+            </div>
+            <div class="flex space-y-2 flex-col justify-center items-center">
+                <div class="font-bold text-xl">Social</div>
+                <ul>
+                    <li class="flex space-x-1">
+                        <p class="pt-1">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" alt="Facebook" class="w-4 h-4" />
+                        </p>
+                        <p>facebook.com/court4u</p>
+                    </li>
+                    <li class="flex space-x-1">
+                        <p class="pt-1">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Ins" class="w-4 h-4" />
+                        </p>
+                        <p>instagram.com/court4u</p>
+                    </li>
+                </ul>
+            </div>
         </div>
+        <div class="flex items-center justify-center">| © 2024 Court4U |</div>
     </footer>
 
     <script>
